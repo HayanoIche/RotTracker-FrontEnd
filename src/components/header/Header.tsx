@@ -36,21 +36,20 @@ export default function Header() {
     return (
         <header className="
             sticky top-0 z-50
-            mx-auto w-full max-w-5xl
+            mx-auto w-full max-w-8xl
             bg-gradient-to-b bg-zinc-500/20
         ">
-            <nav className="flex flex-wrap md:flex-nowrap items-center justify-between px-6 py-4">
-
-                {/* LOGO / NOME */}
+            <nav className="flex flex-wrap md:flex-nowrap items-center justify-between px-8 py-5">
                 <Link
                     to="/"
                     onClick={closeMenu}
-                    className="text-xl font-bold text-zinc-800"
+                    className="text-zinc-800 font-title text-4xl font-bold"
                 >
-                    RotTracker
+                    <span className="text-[var(--g3)]">Rot</span>
+                    <span>Tracker</span>
                 </Link>
 
-                {/* MENU HAMBÚRGUER */}
+                {/* MENU HAMBÚRGUi */}
                 <MenuButton
                     isOpen={isOpen}
                     onClick={() => setIsOpen(!isOpen)}
@@ -62,6 +61,7 @@ export default function Header() {
                     overflow-hidden md:overflow-visible
                     transition-all duration-300 ease-in-out
                     ${isOpen ? 'max-h-60 opacity-100 pt-4' : 'max-h-0 opacity-0 md:max-h-none md:opacity-100 md:pt-0'}
+                    font-text text-2xl font-bold
                 `}>
                     <ul className="
                         flex flex-col md:flex-row
