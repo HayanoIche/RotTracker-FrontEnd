@@ -36,7 +36,7 @@ export default function Header() {
     return (
         <header className="
             sticky top-0 z-50
-            mx-auto w-full max-w-8xl
+            mx-auto w-full max-w-7xl
             bg-gradient-to-b bg-zinc-500/20
         ">
             <nav className="flex flex-wrap md:flex-nowrap items-center justify-between px-8 py-5">
