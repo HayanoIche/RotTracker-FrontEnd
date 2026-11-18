@@ -6,7 +6,8 @@ export default function Hero() {
             flex flex-col md:flex-row
             items-center justify-between
             gap-10
-            px-8 py-20
+            px-8 py-12
+            bg-zinc-500/20
         ">
             {/* IMAGEM */}
             <div className="flex-1">
@@ -28,10 +29,11 @@ export default function Hero() {
                 </p>
 
                 <button className="
-                    bg-[var(--g2)]
+                    bg-[var(--g3)]
                     px-6 py-3 rounded-full
+                    font-title
                     font-bold text-white
-                    hover:bg-[var(--g3)]
+                    hover:bg-[var(--g2)]
                     transition-colors
                 ">
                     Conheça o projeto
