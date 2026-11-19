@@ -5,7 +5,7 @@ import ScrollToTop from './components/common/ScrollToTop.tsx';
 import Home from './pages/Home.tsx';
 import Sobre from './pages/Sobre.tsx';
 import Integrantes from './pages/Integrantes.tsx';
-import IntegranteDetalhes from './pages/IntegranteDetalhes';
+import IntegranteDetalhes from './pages/IntegranteDetalhes.tsx';
 import Faq from './pages/Faq.tsx';
 import Contato from './pages/Contato.tsx';
 
