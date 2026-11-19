@@ -15,6 +15,7 @@ import Faq from './pages/Faq.tsx';
 import Contato from './pages/Contato.tsx';
 import Ia from './pages/Ia.tsx';
 import Aplicacao from './pages/Aplicacao.tsx';
+import Armazenamentos from './components/aplicacao/Armazenamentos.tsx';
 
 function App() {
     return (
@@ -38,7 +39,7 @@ function App() {
                 <Route path="/aplicacao" element={<LayoutAplicacao />}>
                   <Route index element={<AppHome />} />
                   <Route path="ia" element={<Aplicacao />} />
-                  <Route path="armazenamentos" element={<Aplicacao />} />
+                  <Route path="armazenamentos" element={<Armazenamentos />} />
                   <Route path="perfil" element={<Aplicacao />} />
                 </Route>
             </Routes>
