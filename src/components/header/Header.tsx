@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const navLinks = [
-    { to: '/', label: 'Home' },
+    { to: '/', label: 'Inicio' },
     { to: '/sobre', label: 'Sobre' },
+    { to: '/integrantes', label: 'Integrantes' },
+    { to: '/faq', label: 'FAQ' },
     { to: '/contato', label: 'Contato' },
 ];
 
@@ -13,7 +15,7 @@ function MenuButton(props: {
     onClick: () => void;
 }) {
     const lineStyle = "block w-6 h-[3px] bg-zinc-800 rounded-full transition-all duration-300 origin-center";
-
+    
     return (
         <button
             onClick={props.onClick}
@@ -66,7 +68,7 @@ export default function Header() {
                     <ul className="
                         flex flex-col md:flex-row
                         items-center gap-0 md:gap-8
-                        font-bold text-zinc-800
+                        font-bold text-zinc-500
                     ">
                         {navLinks.map((link) => (
                             <li key={link.to} className="w-full md:w-auto">
@@ -76,7 +78,7 @@ export default function Header() {
                                     className="
                                         flex justify-center md:justify-start
                                         py-3 md:py-0
-                                        hover:text-zinc-500
+                                        hover:text-[var(--g3)]
                                         transition-colors
                                     "
                                 >
