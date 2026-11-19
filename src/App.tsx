@@ -7,15 +7,18 @@ import ScrollToTop from './components/common/ScrollToTop.tsx';
 import PageTitle from './components/common/PageTitle';
 
 import Home from './pages/Home.tsx';
-import AppHome from './components/aplicacao/AppHome.tsx';
 import Sobre from './pages/Sobre.tsx';
 import Integrantes from './pages/Integrantes.tsx';
 import IntegranteDetalhes from './pages/IntegranteDetalhes.tsx';
 import Faq from './pages/Faq.tsx';
 import Contato from './pages/Contato.tsx';
+
+import AppHome from './components/aplicacao/AppHome.tsx';
 import Ia from './pages/Ia.tsx';
 import Aplicacao from './pages/Aplicacao.tsx';
 import Armazenamentos from './components/aplicacao/Armazenamentos.tsx';
+import Perfil from './components/aplicacao/Perfil.tsx';
+
 
 function App() {
     return (
@@ -40,7 +43,7 @@ function App() {
                   <Route index element={<AppHome />} />
                   <Route path="ia" element={<Aplicacao />} />
                   <Route path="armazenamentos" element={<Armazenamentos />} />
-                  <Route path="perfil" element={<Aplicacao />} />
+                  <Route path="perfil" element={<Perfil />} />
                 </Route>
             </Routes>
         </BrowserRouter>

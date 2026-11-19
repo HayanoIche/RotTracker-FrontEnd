@@ -6,7 +6,7 @@ interface Armazenamento {
     produtos: number;
 }
 
-// DADOS DE EXEMPLO: depois trocamos pelos dados da API
+// dados exemplo
 const armazenamentos: Armazenamento[] = [
     { nome: 'Geladeira', tipo: 'Geladeira', produtos: 14 },
     { nome: 'Congelador', tipo: 'Congelador', produtos: 9 },
@@ -17,12 +17,11 @@ const armazenamentos: Armazenamento[] = [
 export default function Armazenamentos() {
     return (
         <div className="px-5 pt-8 pb-6 space-y-5">
-            {/* TÍTULO */}
             <h1 className="font-title text-4xl font-bold text-[var(--text-bold)]">
                 Minhas despensas
             </h1>
 
-            {/* BOTÃO + BUSCA */}
+            {/* botao e busca */}
             <div className="flex gap-3">
                 <button
                     type="button"
@@ -30,11 +29,7 @@ export default function Armazenamentos() {
                         shrink-0 rounded-full
                         border border-[var(--g2)] bg-white/70
                         px-4 py-2.5
-                        font-title text-sm font-bold text-[var(--g3)]
-                    "
-                >
-                    + Adicionar
-                </button>
+                        font-title text-sm font-bold text-[var(--g3)]"> + Adicionar </button>
 
                 <input
                     type="search"
@@ -45,12 +40,10 @@ export default function Armazenamentos() {
                         border border-zinc-300 bg-white/70
                         px-4 py-2.5
                         font-text text-sm
-                        focus:outline-none focus:ring-2 focus:ring-[var(--g2)]
-                    "
-                />
+                        focus:outline-none focus:ring-2 focus:ring-[var(--g2)]"/>
             </div>
 
-            {/* FAIXA DE TOTAL */}
+            {/* total */}
             <section className="
                 flex items-center gap-3
                 rounded-2xl p-4 text-white shadow-md
@@ -70,7 +63,7 @@ export default function Armazenamentos() {
                 </div>
             </section>
 
-            {/* GRADE DE CARTÕES */}
+            {/* despensas */}
             <ul className="grid grid-cols-2 gap-3">
                 {armazenamentos.map((item) => (
                     <li
@@ -79,15 +72,13 @@ export default function Armazenamentos() {
                             flex flex-col gap-3
                             rounded-3xl p-4
                             bg-white/80 border border-zinc-300/60
-                            shadow-md backdrop-blur-sm
-                        "
-                    >
+                            shadow-md backdrop-blur-sm">
+
                         <span className="
                             self-start inline-flex items-center gap-1.5
                             rounded-full bg-[var(--g1)]/40
                             px-2.5 py-0.5
-                            font-text text-[10px] font-bold text-[var(--g3)]
-                        ">
+                            font-text text-[10px] font-bold text-[var(--g3)]">
                             <span className="h-1.5 w-1.5 rounded-full bg-[var(--g2)]" />
                             {item.tipo}
                         </span>
