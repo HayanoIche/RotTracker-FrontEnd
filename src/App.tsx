@@ -16,8 +16,10 @@ import Contato from './pages/Contato.tsx';
 import AppHome from './components/aplicacao/AppHome.tsx';
 import Ia from './pages/Ia.tsx';
 import Aplicacao from './pages/Aplicacao.tsx';
-import Armazenamentos from './components/aplicacao/Armazenamentos.tsx';
-import Perfil from './components/aplicacao/Perfil.tsx';
+import Armazenamentos from './pages/Armazenamentos.tsx';
+import Perfil from './pages/Perfil.tsx';
+
+import TesteAPI from './TesteAPI';
 
 
 function App() {
@@ -27,6 +29,9 @@ function App() {
 
             <Routes>
                 {/* Site */}
+
+                <Route path="/teste-api" element={<TesteAPI />} />
+
                 <Route element={<LayoutBase />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/sobre" element={<Sobre />} />
