@@ -4,8 +4,10 @@ import LayoutBase from './layouts/LayoutBase.tsx';
 import LayoutAplicacao from './layouts/LayoutAplicacao.tsx';
 
 import ScrollToTop from './components/common/ScrollToTop.tsx';
+import PageTitle from './components/common/PageTitle';
 
 import Home from './pages/Home.tsx';
+import AppHome from './components/aplicacao/AppHome.tsx';
 import Sobre from './pages/Sobre.tsx';
 import Integrantes from './pages/Integrantes.tsx';
 import IntegranteDetalhes from './pages/IntegranteDetalhes.tsx';
@@ -34,7 +36,7 @@ function App() {
 
                 {/* Aplicação */}
                 <Route path="/aplicacao" element={<LayoutAplicacao />}>
-                  <Route index element={<Aplicacao />} />
+                  <Route index element={<AppHome />} />
                   <Route path="ia" element={<Aplicacao />} />
                   <Route path="armazenamentos" element={<Aplicacao />} />
                   <Route path="perfil" element={<Aplicacao />} />
