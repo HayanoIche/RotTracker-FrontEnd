@@ -1,12 +1,11 @@
-
+import { Link } from 'react-router-dom';
 import type { Integrante } from '../../data/Integrantes';
 
-interface IntegranteCardProps
-{
+interface IntegranteCardProps {
     integrante: Integrante;
 }
 
-export default function IntegranteCard({ integrante }: IntegranteCardProps){
+export default function IntegranteCard({ integrante }: IntegranteCardProps) {
     return (
         <article className="
             flex flex-col items-center
@@ -36,35 +35,19 @@ export default function IntegranteCard({ integrante }: IntegranteCardProps){
                 <h3 className="font-text font-semibold text-[var(--text-bold)]">
                     {integrante.rm}
                 </h3>
-
-                <p className="font-text text-[var(--text-main)] font-bold leading-relaxed">
-                    {integrante.descricao}
-                </p>
             </div>
 
-            <div className="flex gap-4">
-                {integrante.github && (
-                    <a
-                        href={integrante.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-title font-bold text-[var(--g3)] hover:underline"
-                    >
-                        GitHub
-                    </a>
-                )}
-
-                {integrante.linkedin && (
-                    <a
-                        href={integrante.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-title font-bold text-[var(--g3)] hover:underline"
-                    >
-                        LinkedIn
-                    </a>
-                )}
-            </div>
+            <Link
+                to={`/integrantes/${integrante.slug}`}
+                className="
+                    mt-2
+                    font-title font-bold
+                    text-[var(--g3)]
+                    hover:underline
+                "
+            >
+                Ver perfil
+            </Link>
         </article>
     );
 }
