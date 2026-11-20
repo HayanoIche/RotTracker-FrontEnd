@@ -19,7 +19,6 @@ import Aplicacao from './pages/Aplicacao.tsx';
 import Armazenamentos from './pages/Armazenamentos.tsx';
 import Perfil from './pages/Perfil.tsx';
 
-import TesteAPI from './TesteAPI';
 
 
 function App() {
@@ -29,8 +28,6 @@ function App() {
 
             <Routes>
                 {/* Site */}
-
-                <Route path="/teste-api" element={<TesteAPI />} />
 
                 <Route element={<LayoutBase />}>
                     <Route path="/" element={<Home />} />
