@@ -18,6 +18,7 @@ import Ia from './pages/Ia.tsx';
 import Aplicacao from './pages/Aplicacao.tsx';
 import Armazenamentos from './pages/Armazenamentos.tsx';
 import Perfil from './pages/Perfil.tsx';
+import DetalhesDespensa from './pages/DetalhesDespensa.tsx';
 
 
 
@@ -45,6 +46,7 @@ function App() {
                   <Route index element={<AppHome />} />
                   <Route path="ia" element={<Aplicacao />} />
                   <Route path="armazenamentos" element={<Armazenamentos />} />
+                  <Route path="armazenamentos/:id" element={<DetalhesDespensa />} />
                   <Route path="perfil" element={<Perfil />} />
                 </Route>
             </Routes>
