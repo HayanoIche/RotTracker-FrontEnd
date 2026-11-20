@@ -1,32 +1,53 @@
-# React + TypeScript + Vite
+# RotTracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+O RotTracker é um projeto da Global Solution 2026/2 da FIAP. Ele ajuda a organizar os alimentos da despensa, da geladeira e do congelador, acompanhar as datas de validade e evitar desperdício em casa.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Consulta de despensas e acompanhamento das validades dos alimentos.
+- Chatbot IBM Watson para tirar dúvidas e abrir formulários de cadastro.
+- Página de IA que explica os modelos de previsão de desperdício do projeto.
+- Páginas Sobre, Integrantes, FAQ e Contato.
 
-## React Compiler
+## Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React, TypeScript e Vite
+- Tailwind CSS e React Router
+- IBM Watson Assistant
+- API REST em Java publicada no Render
 
-## Expanding the Oxlint configuration
+## Como rodar
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+Na pasta do projeto, com Node.js e npm instalados, execute:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm ci
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Abra a URL que o Vite mostrar no terminal. Para gerar a versão de produção, execute `npm run build`.
+
+## Configuração do chatbot
+
+Se a configuração do Watson já estiver no `.env` do projeto, basta rodar o front. Caso contrário, crie um `.env.local` ao lado do `package.json` e preencha os valores da integração:
+
+```env
+VITE_WATSON_INTEGRATION_ID=
+VITE_WATSON_REGION=
+VITE_WATSON_SERVICE_INSTANCE_ID=
+```
+
+A variável `VITE_CONTATO_EMAIL` é opcional e preenche o destinatário do rascunho de e-mail na página de Contato. Reinicie o Vite depois de alterar as variáveis.
+
+## API
+
+[API Java do RotTracker no Render](https://rottracker-java.onrender.com)
+
+## Integrantes — Turma 1TDSPK
+
+| Nome | RM |
+| --- | --- |
+| Franco Jared Marquina Blas | 572901 |
+| Igor Mateus da Silva | 571751 |
+| Marcela Batista Teixeira | 574069 |
+| Matheus Pereira Vidal | 573327 |
