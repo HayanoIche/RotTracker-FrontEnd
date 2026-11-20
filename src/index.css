@@ -26,3 +26,21 @@
   }
 }
 
+.rt-chat-form input:not([type="checkbox"]),
+.rt-chat-form select {
+  border: 1px solid #d4d4d8;
+  border-radius: 0.4rem;
+  padding: 0.25rem 0.4rem;
+}
+
+.rt-chat-form button {
+  justify-self: start;
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.65rem;
+  color: white;
+  background: var(--g3);
+}
+
+.rt-chat-form button:disabled {
+  opacity: 0.6;
+}

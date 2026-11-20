@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/header/Header";
 import bg from '../assets/bg.png';
 import bg2 from '../assets/bg2.png';
+import ChatRotTracker from "../components/chat/ChatRotTracker";
 
 export default function LayoutBase() {
     return (
@@ -17,6 +18,7 @@ export default function LayoutBase() {
                     <main>
                         <Outlet />
                     </main>
+                    <ChatRotTracker />
                 </div>
             </div>
         </div>
