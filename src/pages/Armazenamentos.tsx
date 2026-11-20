@@ -1,6 +1,8 @@
 
 import { useEffect, useState } from 'react';
-import despensaIcon from '../assets/aplicacao/despensa.jpeg';
+import despensaIcon from '../assets/aplicacao/despensa.svg';
+import freezerIcon from '../assets/aplicacao/freezer.svg';
+import geladeiraIcon from '../assets/aplicacao/geladeira.svg';
 import API_URL from '../services/api';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,9 +25,8 @@ export default function Armazenamentos() {
     const [salvando, setSalvando] = useState(false);
 
     const usuarioId = 1;
-
     const navigate = useNavigate();
-    
+
     async function carregarArmazenamentos() {
         try {
             setLoading(true);
@@ -67,6 +68,16 @@ export default function Armazenamentos() {
         } finally {
             setLoading(false);
         }
+    }
+
+    function obterIcone(tipo: string) {
+        const tipoNormalizado = tipo?.toUpperCase();
+
+        if (tipoNormalizado === 'DESPENSA') return despensaIcon;
+        if (tipoNormalizado === 'CONGELADOR') return freezerIcon;
+        if (tipoNormalizado === 'GELADEIRA') return geladeiraIcon;
+
+        return despensaIcon;
     }
 
     useEffect(() => {
@@ -227,35 +238,39 @@ export default function Armazenamentos() {
                 </p>
             )}
 
-                <ul className="grid grid-cols-2 gap-3">
-            {armazenamentos.map((item) => (
-                <li key={item.id}>
-                    <button
-                        type="button"
-                        onClick={() => navigate(`/aplicacao/armazenamentos/${item.id}`)}
-                        className="flex w-full flex-col gap-3 rounded-3xl p-4 bg-white/80 border border-zinc-300/60 shadow-md backdrop-blur-sm text-left"
-                    >
-                        <span className="self-start inline-flex items-center gap-1.5 rounded-full bg-[var(--g1)]/40 px-2.5 py-0.5 font-text text-[10px] font-bold text-[var(--g3)]">
-                            <span className="h-1.5 w-1.5 rounded-full bg-[var(--g2)]" />
-                            {item.tipo}
-                        </span>
+            <ul className="grid grid-cols-2 gap-3">
+                {armazenamentos.map((item) => (
+                    <li key={item.id}>
+                        <button
+                            type="button"
+                            onClick={() => navigate(`/aplicacao/armazenamentos/${item.id}`)}
+                            className="flex w-full flex-col gap-3 rounded-3xl p-4 bg-white/80 border border-zinc-300/60 shadow-md backdrop-blur-sm text-left"
+                        >
+                            <span className="self-start inline-flex items-center gap-1.5 rounded-full bg-[var(--g1)]/40 px-2.5 py-0.5 font-text text-[10px] font-bold text-[var(--g3)]">
+                                <span className="h-1.5 w-1.5 rounded-full bg-[var(--g2)]" />
+                                {item.tipo}
+                            </span>
 
-                        <div className="flex h-20 items-center justify-center rounded-2xl bg-[var(--g1)]/25">
-                            <img src={despensaIcon} alt="" className="h-10 w-10 object-contain" />
-                        </div>
+                            <div className="flex h-24 w-full shrink-0 items-center justify-center rounded-2xl bg-[var(--g1)]/25 p-3">
+                                <img
+                                    src={obterIcone(item.tipo)}
+                                    alt={item.tipo}
+                                    className="h-full w-full max-h-16 max-w-16 object-contain"
+                                />
+                            </div>
 
-                        <div>
-                            <h2 className="font-title text-lg font-bold leading-tight text-[var(--g3)] break-words">
-                                {item.nome}
-                            </h2>
-                            <p className="font-text text-xs font-bold text-[var(--text-main)]">
-                                {item.produtos} produtos
-                            </p>
-                        </div>
-                    </button>
-                </li>
-            ))}
-        </ul>
+                            <div>
+                                <h2 className="font-title text-lg font-bold leading-tight text-[var(--g3)] break-words">
+                                    {item.nome}
+                                </h2>
+                                <p className="font-text text-xs font-bold text-[var(--text-main)]">
+                                    {item.produtos} produtos
+                                </p>
+                            </div>
+                        </button>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }

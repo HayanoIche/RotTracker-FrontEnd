@@ -1,9 +1,8 @@
 import { NavLink } from 'react-router-dom';
 
-import homeIcon from '../../assets/aplicacao/home.jpeg';
-import iaIcon from '../../assets/aplicacao/ia.jpeg';
-import despensaIcon from '../../assets/aplicacao/despensa.jpeg';
-import perfilIcon from '../../assets/aplicacao/perfil.jpeg';
+import homeIcon from '../../assets/aplicacao/home.svg';
+import despensaIcon from '../../assets/aplicacao/despensa.svg';
+import perfilIcon from '../../assets/aplicacao/perfil.svg';
 
 const navItems = [
     {
@@ -12,11 +11,7 @@ const navItems = [
         icon: homeIcon,
         end: true
     },
-    {
-        to: '/aplicacao/ia',
-        label: 'IA',
-        icon: iaIcon
-    },
+
     {
         to: '/aplicacao/armazenamentos',
         label: 'Despensas',

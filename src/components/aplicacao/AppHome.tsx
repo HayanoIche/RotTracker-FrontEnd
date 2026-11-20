@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 
 import heroImage from '../../assets/home/hero.jpeg';
-import despensaIcon from '../../assets/aplicacao/despensa.jpeg';
-import iaIcon from '../../assets/aplicacao/ia.jpeg';
-import perfilIcon from '../../assets/aplicacao/perfil.jpeg';
+import despensaIcon from '../../assets/aplicacao/despensa.svg';
+import perfilIcon from '../../assets/aplicacao/perfil.svg';
 
 const telas = [
     {
@@ -12,12 +11,7 @@ const telas = [
         texto: 'Geladeira, congelador e despensa. Cadastre os produtos e acompanhe as validades.',
         icone: despensaIcon,
     },
-    {
-        to: '/aplicacao/ia',
-        titulo: 'Assistente de IA',
-        texto: 'Tire dúvidas sobre onde guardar, quanto tempo dura e como congelar.',
-        icone: iaIcon,
-    },
+   
     {
         to: '/aplicacao/perfil',
         titulo: 'Perfil',
