@@ -8,7 +8,6 @@ const navLinks = [
     { to: '/integrantes', label: 'Integrantes' },
     { to: '/faq', label: 'FAQ' },
     { to: '/contato', label: 'Contato' },
-    { to: '/ia', label: 'IA' },
     { to: '/aplicacao', label: 'Aplicativo' },
 ];
 
