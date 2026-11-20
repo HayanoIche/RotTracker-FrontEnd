@@ -11,7 +11,7 @@ interface Usuario {
 }
 
 export default function Perfil() {
-    const usuarioId = 21;
+    const usuarioId = 1;
 
     const [usuario, setUsuario] = useState<Usuario | null>(null);
     const [nome, setNome] = useState('');

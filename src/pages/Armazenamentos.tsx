@@ -16,8 +16,7 @@ export default function Armazenamentos() {
     const [loading, setLoading] = useState(true);
     const [erro, setErro] = useState<string | null>(null);
 
-    // ID temporário até termos o login
-    const usuarioId = 21;
+    const usuarioId = 1;
 
     useEffect(() => {
         async function carregarArmazenamentos() {
