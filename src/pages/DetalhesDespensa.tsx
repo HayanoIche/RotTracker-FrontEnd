@@ -2,7 +2,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import API_URL from '../services/api';
-import despensaIcon from '../assets/aplicacao/despensa.jpeg';
+
+import despensaIcon from '../assets/aplicacao/despensa.svg';
+import freezerIcon from '../assets/aplicacao/freezer.svg';
+import geladeiraIcon from '../assets/aplicacao/geladeira.svg';
 
 interface Despensa {
     id: number;
@@ -33,6 +36,16 @@ function formatarData(data?: string) {
     }
 
     return data;
+}
+
+function obterIcone(tipo: string) {
+    const tipoNormalizado = tipo?.toUpperCase();
+
+    if (tipoNormalizado === 'DESPENSA') return despensaIcon;
+    if (tipoNormalizado === 'CONGELADOR') return freezerIcon;
+    if (tipoNormalizado === 'GELADEIRA') return geladeiraIcon;
+
+    return despensaIcon;
 }
 
 export default function DetalhesDespensa() {
@@ -157,11 +170,11 @@ export default function DetalhesDespensa() {
 
             {/* Cabeçalho */}
             <section className="flex items-center gap-4 rounded-3xl border border-zinc-200/70 bg-white/80 p-5 shadow-sm">
-                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-[var(--g1)]/30">
+                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-[var(--g1)]/30 p-3">
                     <img
-                        src={despensaIcon}
-                        alt=""
-                        className="h-12 w-12 object-contain"
+                        src={obterIcone(despensa.tipo)}
+                        alt={despensa.tipo}
+                        className="h-full w-full max-h-14 max-w-14 object-contain"
                     />
                 </div>
 
@@ -232,17 +245,20 @@ export default function DetalhesDespensa() {
 
                 {produtos.length === 0 ? (
                     <div className="flex flex-col items-center gap-3 rounded-3xl border border-dashed border-zinc-300 bg-white/60 px-5 py-10 text-center">
-                        <img
-                            src={despensaIcon}
-                            alt=""
-                            className="h-12 w-12 object-contain opacity-60"
-                        />
+                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--g1)]/25 p-3">
+                            <img
+                                src={obterIcone(despensa.tipo)}
+                                alt={despensa.tipo}
+                                className="h-full w-full max-h-10 max-w-10 object-contain opacity-70"
+                            />
+                        </div>
+
                         <div>
                             <p className="font-title font-bold text-[var(--g3)]">
                                 Nenhum produto por aqui
                             </p>
                             <p className="mt-1 font-text text-xs text-[var(--text-main)]">
-                                Os produtos cadastrados nesta despensa aparecerão aqui.
+                                Os produtos cadastrados neste armazenamento aparecerão aqui.
                             </p>
                         </div>
                     </div>
